@@ -27,6 +27,8 @@ const game = new Phaser.Game(config);
 
 let player;
 let platform;
+let leftWall;
+let rightWall;
 let cursors;
 
 // Функция preload - ничего не делаем
@@ -39,6 +41,14 @@ function create() {
     platform = this.add.rectangle(400, 580, 800, 40, 0x00ff00);
     this.physics.add.existing(platform, true); // true = статичное тело
 
+    // Создаем левую стену (белая)
+    leftWall = this.add.rectangle(50, 300, 20, 600, 0xffffff);
+    this.physics.add.existing(leftWall, true);
+
+    // Создаем правую стену (белая)
+    rightWall = this.add.rectangle(750, 300, 20, 600, 0xffffff);
+    this.physics.add.existing(rightWall, true);
+
     // 2. Создаем игрока (прямоугольник) в центре экрана
     player = this.add.rectangle(400, 300, 32, 48, 0xff0000);
     
@@ -50,6 +60,10 @@ function create() {
     
     // 5. Делаем так, чтобы игрок сталкивался с платформой
     this.physics.add.collider(player, platform);
+    
+    // Добавляем коллайдеры для стен
+    this.physics.add.collider(player, leftWall);
+    this.physics.add.collider(player, rightWall);
     
     // 6. Создаем управление (cursors) с помощью клавиатуры
     cursors = this.input.keyboard.createCursorKeys();
@@ -73,5 +87,15 @@ function update() {
     // 4. Если нажата стрелка вверх И игрок 'touching.down' (стоит на земле), устанавливаем velocity.y игрока -330
     if (cursors.up.isDown && player.body.touching.down) {
         player.body.setVelocityY(-330);
+    }
+    // Прыжок от левой стены
+    else if (cursors.up.isDown && player.body.touching.left) {
+        player.body.setVelocityY(-250);
+        player.body.setVelocityX(200);
+    }
+    // Прыжок от правой стены
+    else if (cursors.up.isDown && player.body.touching.right) {
+        player.body.setVelocityY(-250);
+        player.body.setVelocityX(-200);
     }
 }
