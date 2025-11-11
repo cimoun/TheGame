@@ -1,16 +1,23 @@
 import Phaser from 'phaser';
-import PlayScene from './scenes/PlayScene';
+import MenuScene from './scenes/MenuScene';
+import GameScene from './scenes/GameScene';
+import GameOverScene from './scenes/GameOverScene';
 
-// Basic Phaser 3 configuration
+// Mobile-optimized Phaser 3 configuration
 const config: Phaser.Types.Core.GameConfig = {
   type: Phaser.AUTO,
   width: 800,
   height: 600,
   parent: 'game-container',
+  scale: {
+    mode: Phaser.Scale.FIT,
+    autoCenter: Phaser.Scale.CENTER_BOTH,
+  },
   input: {
     keyboard: {
       target: window,
     },
+    activePointers: 3, // Support multi-touch
   },
   physics: {
     default: 'arcade',
@@ -19,7 +26,8 @@ const config: Phaser.Types.Core.GameConfig = {
       debug: false,
     },
   },
-  scene: [PlayScene],
+  scene: [MenuScene, GameScene, GameOverScene],
+  backgroundColor: '#1a1a2e',
 };
 
 // Initialize the game
