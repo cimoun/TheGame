@@ -9,6 +9,9 @@ dist/
 # TypeScript compiled output
 src/**/*.js
 !src/**/*.config.js
+*.config.js
+!eslint.config.js
+!vite.config.js
 
 # IDE
 .vscode/

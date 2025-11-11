@@ -12,7 +12,8 @@
       "@scenes/*": ["./src/scenes/*"],
       "@assets/*": ["./public/assets/*"],
       "@types/*": ["./src/types/*"]
-    }
+    },
+    "noEmit": true
   },
   "include": ["src", "vitest.config.ts"],
   "exclude": ["node_modules", "dist"]
