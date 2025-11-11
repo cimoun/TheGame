@@ -2,17 +2,56 @@
   "name": "thegame",
   "version": "1.0.0",
   "description": "A simple Phaser 3 game",
-  "main": "game.js",
-  "scripts": {
-    "start": "npx http-server -p 8080"
+  "type": "module",
+  "engines": {
+    "node": ">=20.0.0"
   },
-  "keywords": ["phaser", "game"],
+  "packageManager": "npm@11.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "coverage": "vitest run --coverage",
+    "prepare": "husky"
+  },
+  "keywords": [
+    "phaser",
+    "game"
+  ],
   "author": "cimoun",
   "license": "MIT",
   "dependencies": {
     "phaser": "^3.90.0"
   },
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "@eslint/js": "^9.15.0",
+    "@vitest/coverage-v8": "^2.1.5",
+    "@vitest/ui": "^2.1.5",
+    "canvas": "^2.11.2",
+    "eslint": "^9.15.0",
+    "eslint-config-prettier": "^9.1.0",
+    "happy-dom": "^20.0.10",
+    "husky": "^9.1.7",
+    "jsdom": "^24.1.3",
+    "lint-staged": "^15.2.11",
+    "phaser3spectorjs": "^0.0.8",
+    "prettier": "^3.3.3",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.15.0",
+    "vite": "^6.0.1",
+    "vitest": "^2.1.5"
+  },
+  "lint-staged": {
+    "*.{ts,js}": [
+      "eslint --fix",
+      "prettier --write"
+    ],
+    "*.md": [
+      "prettier --write"
+    ]
   }
 }
