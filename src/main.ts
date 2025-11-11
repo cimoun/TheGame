@@ -1,5 +1,8 @@
 import Phaser from 'phaser';
 import PlayScene from './scenes/PlayScene';
+import MenuScene from './scenes/MenuScene';
+import LevelSelectScene from './scenes/LevelSelectScene';
+import LevelScene from './scenes/LevelScene';
 
 // Basic Phaser 3 configuration
 const config: Phaser.Types.Core.GameConfig = {
@@ -19,7 +22,7 @@ const config: Phaser.Types.Core.GameConfig = {
       debug: false,
     },
   },
-  scene: [PlayScene],
+  scene: [MenuScene, LevelSelectScene, LevelScene, PlayScene],
 };
 
 // Initialize the game
