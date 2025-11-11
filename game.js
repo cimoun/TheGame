@@ -4,6 +4,11 @@ const config = {
     width: 800,
     height: 600,
     parent: 'game-container',
+    input: {
+        keyboard: {
+            target: window
+        }
+    },
     physics: {
         default: 'arcade',
         arcade: {
