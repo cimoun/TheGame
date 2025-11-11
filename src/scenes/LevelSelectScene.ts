@@ -10,7 +10,7 @@ export default class LevelSelectScene extends Phaser.Scene {
     const centerY = this.cameras.main.height / 2;
 
     // Title
-    const title = this.add.text(centerX, centerY - 120, 'SELECT LEVEL', {
+    const title = this.add.text(centerX, 100, 'SELECT LEVEL', {
       fontSize: '48px',
       color: '#ffffff',
       fontFamily: 'Arial',
@@ -18,7 +18,7 @@ export default class LevelSelectScene extends Phaser.Scene {
     title.setOrigin(0.5);
 
     // Level 1 button
-    const level1Button = this.add.text(centerX - 80, centerY, 'LEVEL 1', {
+    const level1Button = this.add.text(centerX - 100, centerY, 'LEVEL 1', {
       fontSize: '28px',
       color: '#00ff00',
       fontFamily: 'Arial',
@@ -36,7 +36,7 @@ export default class LevelSelectScene extends Phaser.Scene {
     });
 
     // Level 2 button
-    const level2Button = this.add.text(centerX + 80, centerY, 'LEVEL 2', {
+    const level2Button = this.add.text(centerX + 100, centerY, 'LEVEL 2', {
       fontSize: '28px',
       color: '#00ff00',
       fontFamily: 'Arial',
@@ -54,7 +54,7 @@ export default class LevelSelectScene extends Phaser.Scene {
     });
 
     // Back button
-    const backButton = this.add.text(centerX, centerY + 80, 'BACK TO MENU', {
+    const backButton = this.add.text(centerX, centerY + 100, 'BACK TO MENU', {
       fontSize: '24px',
       color: '#888888',
       fontFamily: 'Arial',

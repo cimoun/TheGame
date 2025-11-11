@@ -28,4 +28,9 @@ const config: Phaser.Types.Core.GameConfig = {
 // Initialize the game
 const game = new Phaser.Game(config);
 
+// Expose game to window for debugging (development only)
+if (typeof window !== 'undefined') {
+  (window as any).game = game;
+}
+
 export default game;

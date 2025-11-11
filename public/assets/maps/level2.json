@@ -38,7 +38,15 @@
   "tilesets": [
     {
       "firstgid": 1,
-      "source": "tileset.json"
+      "image": "../tiles.png",
+      "imageheight": 64,
+      "imagewidth": 64,
+      "margin": 0,
+      "name": "tileset",
+      "spacing": 0,
+      "tilecount": 1,
+      "tileheight": 64,
+      "tilewidth": 64
     }
   ],
   "tilewidth": 50,
