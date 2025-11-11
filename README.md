@@ -1,52 +1,65 @@
 # TheGame - Phaser 3 Platformer
 
-A simple platformer game built with Phaser 3.
+A simple platformer game built with Phaser 3, TypeScript, and Vite.
 
 ## Features
 
 - **Player Controls**: Use arrow keys to move and jump
   - ⬅️ Left Arrow: Move left
   - ➡️ Right Arrow: Move right
-  - ⬆️ Up Arrow: Jump (only when on ground)
+  - ⬆️ Up Arrow: Jump (when on ground or wall)
 - **Physics**: Arcade physics with gravity
 - **Platform**: Green platform at the bottom where the player can land
+- **Wall Jump**: Jump from walls for advanced movement
 
-## Getting Started
+## Development
 
-### Prerequisites
+### Setup
 
-- Node.js (v12 or higher)
-- npm
-
-### Installation
-
-1. Clone the repository:
 ```bash
-git clone https://github.com/cimoun/TheGame.git
-cd TheGame
+npm ci
 ```
 
-2. Install dependencies:
+### Dev
+
 ```bash
-npm install
+npm run dev
 ```
 
-3. Start the development server:
+Open your browser and navigate to http://localhost:5173
+
+### Build
+
 ```bash
-npm start
+npm run build
 ```
 
-4. Open your browser and navigate to:
-```
-http://localhost:8080
+### Preview
+
+```bash
+npm run preview
 ```
 
-## Game Controls
+### Test
 
-- **Arrow Left**: Move player left (velocity: -160)
-- **Arrow Right**: Move player right (velocity: 160)
-- **Arrow Up**: Jump (velocity: -330) - only works when player is on the ground
-- **No keys pressed**: Player stops horizontal movement
+```bash
+npm run test        # single run
+npm run test:watch  # watch mode
+npm run coverage    # with coverage report
+```
+
+### Lint
+
+```bash
+npm run lint        # check
+npm run lint -- --fix # auto-fix
+```
+
+### Format
+
+```bash
+npm run format      # format all files
+```
 
 ## Technical Details
 
@@ -55,6 +68,11 @@ http://localhost:8080
 - **Player Gravity**: 300
 - **Player Size**: 32x48 pixels (red rectangle)
 - **Platform Size**: 800x40 pixels (green rectangle)
+- **Build Tool**: Vite
+- **Language**: TypeScript (strict mode)
+- **Testing**: Vitest with jsdom
+- **Linting**: ESLint (flat config) + Prettier
+- **Git Hooks**: Husky + lint-staged
 
 ## License
 

@@ -1,2 +1,38 @@
+# Dependencies
 node_modules/
-package-lock.json
+
+# Build outputs
+dist/
+.vite/
+.tsbuildinfo
+
+# TypeScript compiled output
+src/**/*.js
+!src/**/*.config.js
+*.config.js
+!eslint.config.js
+!vite.config.js
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment
+.env.local
+.env
+
+# Tests
+coverage/
+.vitest/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
