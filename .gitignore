@@ -6,6 +6,10 @@ dist/
 .vite/
 .tsbuildinfo
 
+# TypeScript compiled output
+src/**/*.js
+!src/**/*.config.js
+
 # IDE
 .vscode/
 .idea/
